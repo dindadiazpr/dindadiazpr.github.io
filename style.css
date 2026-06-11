@@ -141,6 +141,27 @@ a{color:inherit;text-decoration:none}
 .stat b{display:block;font-family:"Baloo 2",cursive;font-size:2.6rem}
 .stat span{font-size:.9rem;font-weight:600;opacity:.95}
 
+/* ---------- Achievements ---------- */
+.achievements{position:relative;z-index:1}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.ach{border:2px solid var(--line);border-radius:18px;padding:1.3rem;box-shadow:var(--shadow);transition:transform .2s}
+.ach:hover{transform:translateY(-5px) rotate(-1deg)}
+.ach__icon{font-size:1.9rem}
+.ach h3{font-size:1.05rem;margin:.4rem 0 .2rem;line-height:1.2}
+.ach p{color:var(--ink-soft);font-size:.9rem;font-weight:600}
+.ach:nth-child(3n+1){background:#fff3d6}
+.ach:nth-child(3n+2){background:#d6f0ee}
+.ach:nth-child(3n+3){background:#ffe2d8}
+
+/* ---------- Schools ---------- */
+.schools{position:relative;z-index:1}
+.schools__sub{text-align:center;color:var(--ink-soft);max-width:620px;margin:.7rem auto 0;font-size:1.02rem}
+.school-badges{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;max-width:900px;margin:2.2rem auto 0}
+.school-badges span{background:#fff;border:2px solid var(--line);border-radius:100px;padding:.7rem 1.3rem;font-weight:700;box-shadow:var(--shadow);transition:transform .2s}
+.school-badges span:hover{transform:translateY(-4px);border-color:var(--teal)}
+.school-badges small{font-weight:600;color:var(--ink-soft)}
+.school-badges .more{background:var(--teal);color:#fff;border-color:var(--teal)}
+
 /* ---------- Journey ---------- */
 .journey{position:relative;z-index:1}
 .timeline{position:relative;max-width:760px;margin:0 auto;padding-left:1rem}
@@ -206,6 +227,7 @@ a{color:inherit;text-decoration:none}
   .pillars{grid-template-columns:1fr 1fr}
   .panel.is-active{grid-template-columns:1fr}
   .impact__grid{grid-template-columns:1fr 1fr}
+  .ach-grid{grid-template-columns:1fr 1fr}
   .bubbles{grid-template-columns:1fr}
   .nav__links{position:absolute;top:100%;right:1rem;left:1rem;flex-direction:column;align-items:stretch;background:#fff;border-radius:18px;padding:1rem;box-shadow:var(--shadow);display:none}
   .nav__links.open{display:flex}
@@ -215,6 +237,7 @@ a{color:inherit;text-decoration:none}
   .section{padding:3.5rem 1.1rem}
   .pillars{grid-template-columns:1fr}
   .impact__grid{grid-template-columns:1fr}
+  .ach-grid{grid-template-columns:1fr}
   .flips{grid-template-columns:1fr 1fr}
   .counters{gap:1.2rem}
 }
