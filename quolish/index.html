@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quolish, Kelas Bahasa Inggris untuk Anak &amp; Dewasa</title>
+  <meta name="description" content="Quolish: belajar bahasa Inggris jadi percaya diri. Membaca dengan phonics, conversation, dukungan sekolah, persiapan ujian, literasi Bahasa Inggris &amp; Bahasa Indonesia UTBK. Ramah anak ADHD. Untuk anak, pelajar &amp; dewasa. Online &amp; offline (Bali)." />
+  <style>
+    :root{
+      --orange:#f97316; --orange-d:#ea6a0c; --amber:#ffb020; --amber-d:#f59e0b;
+      --peach:#ffe9d6; --cream:#fff7ef; --ice:#fffaf4;
+      --ink:#3a2412; --head:#4a2c12; --muted:#7a6553; --white:#fff;
+      --radius:18px; --shadow:0 12px 30px rgba(180,90,20,.14);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--white)}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+    .btn{display:inline-block;background:var(--amber);color:#4a2c00;font-weight:700;padding:14px 26px;border-radius:999px;box-shadow:var(--shadow);transition:transform .15s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-orange{background:var(--orange);color:#fff}
+    .btn-light{background:var(--white);color:var(--orange-d)}
+
+    /* Quokka logo sizing */
+    .quokka{display:block}
+    .logo .quokka{width:30px;height:30px}
+    .hero-quokka .quokka{width:120px;height:120px;margin:0 auto}
+
+    /* Header */
+    header{position:sticky;top:0;background:rgba(255,247,239,.92);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #f3e1cf}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--orange-d)}
+    nav.links a{margin-left:22px;color:var(--muted);font-weight:600;font-size:15px}
+    nav.links a:hover{color:var(--orange)}
+    @media(max-width:640px){nav.links{display:none}}
+
+    /* Hero */
+    .hero{background:linear-gradient(160deg,var(--peach),#fff);padding:60px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+    @media(max-width:780px){.hero-grid{grid-template-columns:1fr;text-align:center}}
+    .pill{display:inline-block;background:#ffe0c2;color:var(--orange-d);font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+    .hero h1{font-size:44px;line-height:1.15;color:var(--head);margin-bottom:16px}
+    .hero h1 span{color:var(--orange)}
+    @media(max-width:780px){.hero h1{font-size:34px}}
+    .hero p.lead{font-size:19px;color:var(--muted);margin-bottom:26px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    @media(max-width:780px){.hero-cta{justify-content:center}}
+    .hero-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;text-align:center}
+    .hero-card h3{color:var(--head);margin:14px 0 4px}
+    .hero-card p{color:var(--muted);font-size:15px}
+
+    /* Section */
+    section.block{padding:54px 0}
+    .eyebrow{color:var(--orange);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:13px;text-align:center;margin-bottom:8px}
+    h2.title{text-align:center;color:var(--head);font-size:30px;margin-bottom:34px}
+
+    /* What you get */
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    @media(max-width:880px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--cream);border:1px solid #f6e3d2;border-radius:var(--radius);padding:24px;text-align:center}
+    .card .ic{font-size:34px}
+    .card h4{color:var(--head);margin:12px 0 6px;font-size:17px}
+    .card p{color:var(--muted);font-size:14px}
+
+    /* Special program cards */
+    .specials{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media(max-width:780px){.specials{grid-template-columns:1fr}}
+    .special{color:#fff;border-radius:24px;padding:30px;box-shadow:var(--shadow);text-align:center;display:flex;flex-direction:column}
+    .special.kids{background:linear-gradient(135deg,#fb923c,#f59e0b)}
+    .special.utbk{background:linear-gradient(135deg,#f97316,#ea580c)}
+    .special .badge{width:66px;height:66px;border-radius:20px;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 14px}
+    .special h3{font-size:22px;margin-bottom:8px}
+    .special p{opacity:.96;font-size:15px;margin-bottom:18px;flex-grow:1}
+    .special .btn{background:#fff;color:var(--orange-d);align-self:center}
+
+    /* Programs */
+    .progs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    @media(max-width:780px){.progs{grid-template-columns:1fr}}
+    .prog{border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);background:var(--white);border:1px solid #f6e3d2}
+    .prog .tag{font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px;display:inline-block;margin-bottom:12px;background:#ffe0c2;color:var(--orange-d)}
+    .prog h3{color:var(--head);font-size:22px;margin-bottom:6px}
+    .prog .mode{color:var(--orange);font-weight:700;font-size:14px;margin-bottom:14px}
+    .prog ul{list-style:none}
+    .prog li{padding:6px 0 6px 28px;position:relative;color:var(--ink);font-size:15px}
+    .prog li:before{content:"🦫";position:absolute;left:0}
+
+    /* About */
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center;background:var(--cream);border-radius:24px;padding:36px}
+    @media(max-width:780px){.about{grid-template-columns:1fr;text-align:center}}
+    .about .ava{text-align:center}
+    .about .ava img{width:170px;height:170px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow);border:5px solid #fff}
+    .about h3{color:var(--head);font-size:24px;margin-bottom:10px}
+    .about p{color:var(--muted);margin-bottom:12px}
+
+    /* Testimonials */
+    .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:780px){.tcards{grid-template-columns:1fr}}
+    .tcard{background:var(--white);border:1px solid #f6e3d2;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+    .tcard .stars{color:var(--amber-d);font-size:16px;margin-bottom:10px}
+    .tcard p.quote{color:var(--ink);font-style:italic;margin-bottom:16px}
+    .tcard .who{display:flex;align-items:center;gap:12px}
+    .tcard .who .av{width:42px;height:42px;border-radius:50%;background:var(--peach);display:flex;align-items:center;justify-content:center;font-size:20px}
+    .tcard .who b{color:var(--head);font-size:15px;display:block}
+    .tcard .who span{color:var(--muted);font-size:13px}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media(max-width:680px){.steps{grid-template-columns:1fr}}
+    .step{text-align:center;padding:22px}
+    .step .num{width:46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:18px}
+    .step h4{color:var(--head);margin-bottom:6px}
+    .step p{color:var(--muted);font-size:14px}
+
+    /* CTA */
+    .cta{background:linear-gradient(160deg,var(--orange-d),#c2540a);color:#fff;text-align:center;padding:54px 22px;border-radius:24px}
+    .cta h2{font-size:30px;margin-bottom:10px}
+    .cta p{opacity:.92;margin-bottom:24px;font-size:18px}
+
+    footer{text-align:center;color:var(--muted);font-size:14px;padding:34px 0 50px}
+    footer .logo{justify-content:center;margin-bottom:8px}
+
+    /* Floating WA */
+    .wa-float{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;font-weight:700;padding:13px 20px;border-radius:999px;box-shadow:var(--shadow);z-index:20}
+  </style>
+</head>
+<body>
+
+  <!-- Reusable quokka logo as an SVG symbol -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="quokka" viewBox="0 0 64 64">
+      <!-- ears -->
+      <circle cx="20" cy="18" r="7" fill="#9c6537"/>
+      <circle cx="44" cy="18" r="7" fill="#9c6537"/>
+      <circle cx="20" cy="18" r="3.4" fill="#d9a675"/>
+      <circle cx="44" cy="18" r="3.4" fill="#d9a675"/>
+      <!-- round chubby head -->
+      <path d="M32 11 C46 11 53 23 53 36 C53 50 43 57 32 57 C21 57 11 50 11 36 C11 23 18 11 32 11 Z" fill="#a86f43"/>
+      <!-- lighter cheeks -->
+      <ellipse cx="32" cy="43" rx="16" ry="13" fill="#c08a57"/>
+      <!-- muzzle -->
+      <ellipse cx="32" cy="45" rx="9" ry="7" fill="#ecd2ad"/>
+      <!-- eyes -->
+      <circle cx="24" cy="33" r="3.2" fill="#2e1d0f"/>
+      <circle cx="40" cy="33" r="3.2" fill="#2e1d0f"/>
+      <circle cx="25.2" cy="31.9" r="1.1" fill="#fff"/>
+      <circle cx="41.2" cy="31.9" r="1.1" fill="#fff"/>
+      <!-- nose -->
+      <path d="M29.5 41 h5 a1.5 1.5 0 0 1 1.1 2.5 l-2.5 2.8 a1.4 1.4 0 0 1 -2.2 0 l-2.5 -2.8 a1.5 1.5 0 0 1 1.1 -2.5 Z" fill="#2e1d0f"/>
+      <!-- signature quokka grin -->
+      <path d="M26 47.5 Q32 53.5 38 47.5" stroke="#2e1d0f" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <!-- blush -->
+      <circle cx="18.5" cy="44" r="3" fill="#f3a98f" opacity=".5"/>
+      <circle cx="45.5" cy="44" r="3" fill="#f3a98f" opacity=".5"/>
+    </symbol>
+  </svg>
+
+  <header>
+    <div class="wrap nav">
+      <div class="logo"><svg class="quokka"><use href="#quokka"/></svg> Quolish</div>
+      <nav class="links">
+        <a href="#program">Program</a>
+        <a href="#utbk">UTBK</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#daftar" style="color:var(--orange)">Trial Gratis</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">Untuk Anak, Pelajar &amp; Dewasa · Online &amp; Offline (Bali)</span>
+        <h1>Bahasa Inggris yang <span>percaya diri</span>, mulai dari sekarang</h1>
+        <p class="lead">Belajar bersama guru berpengalaman. Anak sampai dewasa belajar <strong>speaking, conversation, dukungan pelajaran sekolah,</strong> sampai <strong>persiapan ujian</strong>, dengan metode santai tapi serius.</p>
+        <div class="hero-cta">
+          <a class="btn btn-orange" href="#daftar">Coba Kelas Trial Gratis</a>
+          <a class="btn btn-light" href="#program">Lihat Program</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-quokka"><svg class="quokka"><use href="#quokka"/></svg></div>
+        <h3>Belajar tanpa takut salah</h3>
+        <p>Kelas privat dan personal, supaya setiap murid berani ngomong bahasa Inggris.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="block" id="manfaat">
+    <div class="wrap">
+      <div class="eyebrow">Yang Kamu Dapat</div>
+      <h2 class="title">Fokus belajar di Quolish</h2>
+      <div class="cards">
+        <div class="card"><div class="ic">💬</div><h4>Speaking Percaya Diri</h4><p>Berani ngomong basic English dengan lancar dan benar.</p></div>
+        <div class="card"><div class="ic">🗣️</div><h4>Conversation</h4><p>Latihan ngobrol natural untuk situasi sehari-hari.</p></div>
+        <div class="card"><div class="ic">📚</div><h4>Dukungan Sekolah</h4><p>Bantuan tugas dan materi bahasa Inggris di sekolah.</p></div>
+        <div class="card"><div class="ic">🎯</div><h4>Persiapan Ujian</h4><p>Latihan terarah untuk ujian sekolah dan tes bahasa Inggris.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIAL PROGRAMS -->
+  <section class="block" id="spesial">
+    <div class="wrap">
+      <div class="eyebrow">Program Spesial</div>
+      <h2 class="title">Dua program unggulan</h2>
+      <div class="specials">
+        <div class="special kids">
+          <div class="badge">📖</div>
+          <h3>Anak Bisa Baca &amp; Ngomong Inggris</h3>
+          <p>Lewat metode <strong>phonics</strong>, anak belajar membaca dari nol sampai lancar, sekaligus berani ngomong bahasa Inggris dengan percaya diri.</p>
+          <a class="btn" href="#daftar">Tanya Kelas Anak</a>
+        </div>
+        <div class="special utbk" id="utbk">
+          <div class="badge">🎓</div>
+          <h3>Persiapan UTBK</h3>
+          <p>Bimbingan <strong>Literasi Bahasa Inggris</strong> dan <strong>Literasi Bahasa Indonesia</strong> untuk UTBK. Latihan soal terarah supaya siap tembus PTN impian.</p>
+          <a class="btn" href="#daftar">Tanya Kelas UTBK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="block" id="program" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="eyebrow">Program</div>
+      <h2 class="title">Pilih sesuai usia</h2>
+      <div class="progs">
+        <div class="prog">
+          <span class="tag">Kelas Anak</span>
+          <h3>Privat &amp; Offline</h3>
+          <div class="mode">📍 Tatap muka di Bali, 1 on 1 privat</div>
+          <ul>
+            <li>Belajar membaca lewat metode phonics</li>
+            <li>Speaking dan conversation dasar yang seru</li>
+            <li>Privat 1 on 1, penuh perhatian ke setiap anak</li>
+            <li>Ramah dan berpengalaman mendampingi anak dengan ADHD</li>
+          </ul>
+        </div>
+        <div class="prog">
+          <span class="tag">Kelas Pelajar &amp; Dewasa</span>
+          <h3>Online</h3>
+          <div class="mode">💻 Online via Google Meet</div>
+          <ul>
+            <li>Conversation dan speaking lebih percaya diri</li>
+            <li>Dukungan tugas dan materi sekolah atau kuliah</li>
+            <li>Persiapan ujian dan literasi UTBK</li>
+            <li>Jadwal fleksibel, belajar dari mana saja</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="block" id="tentang">
+    <div class="wrap">
+      <div class="about">
+        <div class="ava"><img src="missdinda.jpg" alt="Dinda dari tim Quolish" /></div>
+        <div>
+          <h3>Halo, saya Dinda dari tim Quolish 👋</h3>
+          <p>Guru bahasa Inggris dengan banyak pengalaman mengajar privat. Saya percaya setiap murid bisa berani berbahasa Inggris kalau belajarnya menyenangkan dan tanpa takut salah.</p>
+          <p>Lewat <strong>Quolish</strong>, saya bantu murid dari anak-anak sampai dewasa untuk speaking percaya diri, lancar conversation, belajar membaca dengan phonics, siap ujian, sampai persiapan literasi UTBK.</p>
+          <a class="btn btn-light" style="box-shadow:var(--shadow)" href="https://dindadiazpr.github.io" target="_blank" rel="noopener">Lihat Pengalaman Saya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <!-- GANTI teks placeholder di bawah dengan testimoni ASLI dari murid / orang tua. Jangan pakai testimoni palsu. -->
+  <section class="block" id="testimoni">
+    <div class="wrap">
+      <div class="eyebrow">Testimoni</div>
+      <h2 class="title">Kata murid &amp; orang tua</h2>
+      <div class="tcards">
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"You are the best teacher I could ever wish for. I loved going to school because you were there. I will miss you so, so much."</p>
+          <div class="who"><div class="av">K</div><div><b>Kim</b><span>Orang tua murid, Rumah Kecil</span></div></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"My speaking improved so much in just a few months."</p>
+          <div class="who"><div class="av">S</div><div><b>Surya</b><span>Mahasiswa, Universitas Airlangga</span></div></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Kak Dinda is literally a lifesaver when I felt lost in my literacy studies. She truly cares, asking each of us about our struggles and helping us through. I want to be a teacher like her."</p>
+          <div class="who"><div class="av">M</div><div><b>Marvin</b><span>Murid persiapan UTBK</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="block" id="cara" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="eyebrow">Cara Daftar</div>
+      <h2 class="title">Mulai dalam 3 langkah mudah</h2>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h4>Chat WhatsApp</h4><p>Klik tombol di bawah dan ceritakan usia serta kebutuhan belajar.</p></div>
+        <div class="step"><div class="num">2</div><h4>Trial Gratis</h4><p>Ikut kelas percobaan gratis untuk kenalan dan coba metodenya.</p></div>
+        <div class="step"><div class="num">3</div><h4>Mulai Belajar</h4><p>Pilih jadwal dan paket, lalu mulai perjalanan bahasa Inggrismu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="block" id="daftar">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Siap mulai? Coba kelas trial gratis</h2>
+        <p>Hubungi langsung lewat WhatsApp, dibalas dalam beberapa menit.</p>
+        <a class="btn" href="https://wa.me/6281809677772?text=Halo%20Quolish%2C%20saya%20mau%20tanya%20soal%20kelas%20bahasa%20Inggris" target="_blank" rel="noopener">💬 Chat WhatsApp Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="logo"><svg class="quokka"><use href="#quokka"/></svg> Quolish</div>
+      <p>Kelas Bahasa Inggris untuk Anak &amp; Dewasa · Online &amp; Offline (Bali)</p>
+      <p style="margin-top:6px">© 2026 Quolish</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="wa-float" href="https://wa.me/6281809677772?text=Halo%20Quolish%2C%20saya%20mau%20tanya%20soal%20kelas%20bahasa%20Inggris" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+</body>
+</html>
